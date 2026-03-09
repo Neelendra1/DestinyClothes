@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+}
+
+@layer base {
+  body {
+    @apply bg-stone-50 text-stone-900 font-sans;
+  }
+}
+
+.editorial-title {
+  @apply font-serif italic;
+}
+
+.offer-plane-track {
+  @apply relative overflow-hidden h-14 sm:h-16 flex items-center bg-transparent rounded-full;
+}
+
+.offer-plane {
+  @apply relative inline-flex items-center text-[12px] sm:text-sm font-bold whitespace-nowrap;
+  animation: plane-fly-rtl 20s linear infinite;
+}
+
+.offer-flag {
+  @apply relative inline-flex items-center ml-[-3.5rem] pl-14 pr-6 h-10 sm:h-12 rounded-full bg-white text-stone-900 shadow-sm border border-sky-100;
+}
+
+.offer-plane-img {
+  @apply h-10 sm:h-12 drop-shadow;
+  position: relative;
+  z-index: 10;
+  border-radius: calc(infinity * 1px);
+}
+
+@keyframes plane-fly-rtl {
+  0% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(-120%);
+  }
+}
